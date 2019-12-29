@@ -1,0 +1,445 @@
+.my-nav {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.carousel-item {
+    height: 100vh;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.get-in-touch {
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+
+}
+
+.get-in-touch .title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3.2em;
+    line-height: 48px;
+    padding-bottom: 48px;
+    color: black;
+    background: black;
+    background: -moz-linear-gradient(left, #FFFF00 0%, black 100%) !important;
+    background: -webkit-linear-gradient(left, #FFFF00 0%, black 100%) !important;
+    background: linear-gradient(to right, #FFFF00 0%, black 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.contact-form .form-field {
+    position: relative;
+    margin: 32px 0;
+}
+
+.contact-form .input-text {
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: black;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+.contact-form .input-text:focus {
+    outline: none;
+}
+
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
+    -webkit-transform: translateY(-24px);
+    transform: translateY(-24px);
+}
+
+.contact-form .label {
+    position: absolute;
+    left: 20px;
+    bottom: 11px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: black;
+    cursor: text;
+    transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out,
+    -webkit-transform .2s ease-in-out;
+}
+
+.contact-form .submit-btn {
+    display: inline-block;
+    background-color: #000;
+    background-image: linear-gradient(125deg, #FFFF00, black);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    width: 200px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    position: relative;
+    background-color: #222222;
+    color: #989898;
+    padding: 95px 0 50px;
+    font-size: 16px;
+
+}
+
+.footer p {
+    line-height: 26px;
+    color: #fff;
+}
+
+.footer h5 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #f65314;
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.footer h5:after {
+    content: '';
+    display: block;
+    margin: 5px 0 0;
+    width: 40%;
+    height: 1px;
+    background-color: #1e1d22;
+}
+
+.footer ul {
+    list-style: none;
+    line-height: 35px;
+    margin: 0px;
+    color: #fff;
+
+}
+
+.footer a {
+    color: #fff;
+
+
+}
+
+.footer a:hover {
+    color: #f65314;
+}
+
+/* Footer Logo */
+.foot-logo {
+    margin: 0px 0px 18px 0px;
+    padding: 0;
+}
+
+/*footer bottom */
+.footer-bottom {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    border-top: 1px solid #2f2f33;
+    background: #1e1d22;
+
+}
+
+.copyright-text p {
+    color: #7d7975;
+    margin-top: 18px;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.copyright-text a {
+    color: #7d7975;
+    margin: 0px 10px 0px 10px;
+
+}
+
+.copyright-text a:hover {
+    color: #f65314;
+
+
+}
+
+/* Social Icons */
+
+.social-icons {
+
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+.social {
+    margin: 7px 7px 7px 0px;
+    color: #fff;
+}
+
+
+#social-fb:hover {
+    color: #3B5998;
+    transition: all .25s;
+}
+
+#social-tw:hover {
+    color: #4099FF;
+    transition: all .25s;
+}
+
+#social-gp:hover {
+    color: #d34836;
+    transition: all .25s;
+}
+
+#social-em:hover {
+    color: #f39c12;
+    transition: all .25s;
+}
+
+/* cta section */
+/*******************
+Padding-Margin
+*********************/
+
+.cta-padding35 {
+    padding: 35px 0 40px;
+    background-color: #f65314;
+    color: #fff;
+    border-bottom: 1px solid #222222;
+}
+
+.Tpadding10 {
+    padding-top: 10px;
+    color: #fff;
+}
+
+.TBpadding60 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.site-btn {
+    font-size: 18px;
+    padding: 13px 30px;
+    border-radius: 5px;
+    min-width: 200px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #f65314;
+    background-color: transparent;
+    transition: all .25s ease-in-out;
+    border-color: #f65314;
+}
+
+.site-btn2 {
+    padding: 13px 30px;
+    border-radius: 5px;
+    min-width: 200px;
+    color: #000;
+    border-color: #000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.site-btn:hover {
+    background-color: #000;
+}
+
+
+.secpaddingTB60 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-title {
+    font-weight: 400;
+    letter-spacing: .5px;
+    text-transform: none;
+    color: #000;
+}
+
+.section-titlepara {
+    font-weight: 400;
+    text-transform: none;
+    color: #636363;
+}
+
+.border {
+    border-bottom: 1px solid #e2e2e2;
+    width: 30%;
+    margin-bottom: 25px;
+
+}
+
+
+i {
+    font-size: 36px;
+    padding-right: 10px;
+    color: #f65314;
+}
+
+.icon-box {
+    position: relative;
+    margin-top: 20px;
+    padding: 0 0 0 80px;
+}
+
+.icon-left {
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 0;
+    left: 0;
+}
+
+/* Carousel base class */
+.carousel {
+    height: 500px;
+    margin-bottom: 60px;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+    height: 500px;
+    background-color: #777;
+
+
+}
+
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+
+}
+
+.carousel-caption h1 {
+
+    font-size: 64px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+/* navigation CSS */
+.navbar-default {
+    background-color: #000000;
+    border-color: #000000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    font-size: 17px;
+}
+
+.navbar-default .navbar-brand {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #f65314;
+}
+
+.navbar-default .navbar-text {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #f65314;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu {
+    background-color: #000000;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+    color: #f65314;
+    background-color: #000000;
+}
+
+.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
+    background-color: #000000;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #f65314;
+    background-color: #000000;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #f65314;
+    background-color: #000000;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #f65314;
+    background-color: #000000;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #000000;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #000000;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ecf0f1;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #ecf0f1;
+}
+
+.navbar-default .navbar-link {
+    color: #ecf0f1;
+}
+
+.navbar-default .navbar-link:hover {
+    color: #f65314;
+}
