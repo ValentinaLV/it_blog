@@ -16,7 +16,7 @@ coverage==4.5.4
 cryptography==2.8
 decorator==4.4.1
 defusedxml==0.6.0
-Django==2.2.6
+Django==2.2.8
 dominate==2.4.0
 entrypoints==0.3
 flake8==3.7.9
