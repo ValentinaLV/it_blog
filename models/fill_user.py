@@ -11,3 +11,4 @@ from app import user_datastore
 user = User.query.first()
 print(user)
 print(user.id)
+print(user.username)

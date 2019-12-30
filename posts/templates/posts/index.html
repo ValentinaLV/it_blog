@@ -29,16 +29,17 @@ Posts
                     <hr>
                     <a href="{{url_for('posts.post_detail', slug=post.slug)}}" style="color: white">{{post.title}}</a>
                     <div class="text-right">
+                        {% if current_user.has_role('admin') %}
                         <a href="{{url_for('posts.edit_post', slug=post.slug)}}" class="btn btn-secondary"
                            role="button">Edit</a>
+                        {% endif %}
                     </div>
                     <hr>
                 </div>
                 {% endfor %}
 
                 <nav>
-                    <ul class="pagination justify-content-center">
-
+                    <ul class="pagination justify-content-center" style="margin-top: 100px">
                         <li {% if not pages.has_prev %} class="page-item disabled" {% endif %}>
                             <a class="page-link" href="./?page={{pages.prev_num}}" tabindex="-1">Previous</a>
                         </li>
@@ -52,7 +53,6 @@ Posts
                         <li {% if not pages.has_next %} class="page-item disabled" {% endif %}>
                             <a class="page-link" href="./?page={{pages.next_num}}">Next</a>
                         </li>
-
                     </ul>
                 </nav>
             </div>

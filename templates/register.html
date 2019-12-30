@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+
+{% block content %}
+<section class="contact pt-100 pb-100" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 mx-auto text-center">
+                <div class="section-title mb-100">
+                    <p>add your account</p>
+                    <h4>registration form</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <form action="{{url_for('register_user')}}" method=post class="contact-form">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            {{ form.username(placeholder='Name') }}
+                        </div>
+                        <div class="col-xl-6">
+                            {{ form.email(placeholder='Email') }}
+                        </div>
+                        <div class="col-xl-6">
+                            {{ form.password(placeholder='Password') }}
+                        </div>
+                        <div class="col-xl-6">
+                            {{ form.confirm(placeholder='Confirm Password') }}
+                        </div>
+                        <div class="col-xl-12">
+                            {{ form.accept_tos(class='') }}
+<!--                            {{ form.accept_tos.label(class='text-left') }}-->
+                            {{ form.submit }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
