@@ -6,32 +6,57 @@ Contacts
 
 
 {% block content %}
-<section class="get-in-touch">
-   <h1 class="title">Get in touch</h1>
-   <form class="contact-form row">
-      <div class="form-field col-lg-6">
-         <input id="name" class="input-text js-input" type="text" required>
-         <label class="label" for="name">Name</label>
-      </div>
-      <div class="form-field col-lg-6 ">
-         <input id="email" class="input-text js-input" type="email" required>
-         <label class="label" for="email">E-mail</label>
-      </div>
-      <div class="form-field col-lg-6 ">
-         <input id="company" class="input-text js-input" type="text" required>
-         <label class="label" for="company">Company Name</label>
-      </div>
-       <div class="form-field col-lg-6 ">
-         <input id="phone" class="input-text js-input" type="text" required>
-         <label class="label" for="phone">Contact Number</label>
-      </div>
-      <div class="form-field col-lg-12">
-         <input id="message" class="input-text js-input" type="text" required>
-         <label class="label" for="message">Message</label>
-      </div>
-      <div class="form-field col-lg-12">
-         <input class="submit-btn" type="submit" value="Submit">
-      </div>
-   </form>
+<section class="contact pt-100 pb-100" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 mx-auto text-center">
+                <div class="section-title mb-100">
+                    <p>get in touch</p>
+                    <h4>contact me</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-8">
+                <form action="#" class="contact-form">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <input type="text" placeholder="name">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="text" placeholder="email">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="text" placeholder="subject">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="text" placeholder="telephone">
+                        </div>
+                        <div class="col-xl-12">
+                            <textarea placeholder="message" cols="30" rows="10"></textarea>
+                            <input class="btn" type="submit" value="send message">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div class="single-contact">
+                    <i class="fa fa-map-marker"></i>
+                    <h5>Address</h5>
+                    <p>661 Lefferts, NY 11203, USA</p>
+                </div>
+                <div class="single-contact">
+                    <i class="fa fa-phone"></i>
+                    <h5>Phone</h5>
+                    <p>(+1) 517 397 7100</p>
+                </div>
+                <div class="single-contact">
+                    <i class="fa fa-envelope"></i>
+                    <h5>Email</h5>
+                    <p>infor@personal.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}

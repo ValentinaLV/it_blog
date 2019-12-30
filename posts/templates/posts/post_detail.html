@@ -6,35 +6,43 @@
 
 
 {% block content %}
-<div class="col-md-12">
-    <div class="container">
-        <div>
+<section class="blog pt-100 pb-100">
+    <div class="col-md-12">
+        <div class="container">
+            <div>
+                <hr>
+<!--                <h1 class="text-center mt-3 mb-5">{{post.title}}</h1>-->
+                <div class="col-xl-6 mx-auto text-center">
+                    <div class="section-title mb-100">
+                        <p>post details</p>
+                        <h4>{{post.title}}</h4>
+                    </div>
+                </div>
+                <div class="">
+                    {% for tag in tags %}
+                    <a href="{{url_for('posts.tag_detail', slug=tag.slug)}}" style="text-decoration:none">
+                        <span class="badge badge-warning mt-2 mb-5">{{tag.name}}</span>
+                        <!--                                {% if tag in ['skills', 'job', 'work'] %}-->
+                        <!--                                <span class="badge badge-warning">{{tag.name}}</span>-->
+                        <!--                                {% elif tag == 'skills' %}-->
+                        <!--                                <span class="badge badge-secondary">{{tag.name}}</span>-->
+                        <!--                                {% elif tag in ['story', 'blog'] %}-->
+                        <!--                                <span class="badge badge-primary">{{tag.name}}</span>-->
+                        <!--                                {% elif tag in ['personal'] %}-->
+                        <!--                                <span class="badge badge-success">{{tag.name}}</span>-->
+                        <!--                                {% elif tag in ['python', 'django', 'flask', 'pip'] %}-->
+                        <!--                                <span class="badge badge-info">{{tag.name}}</span>-->
+                        <!--                                {% endif %}-->
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="">
+                    <p>{{post.body}}</p>
+                </div>
+                <span class="badge" style="padding-left: 0">Posted {{post.created}}</span>
+            </div>
             <hr>
-            <h1 class="text-center mt-3 mb-5">{{post.title}}</h1>
-            <div class="pull-right">
-                {% for tag in tags %}
-                <a href="{{url_for('posts.tag_detail', slug=tag.slug)}}" style="text-decoration:none">
-                    <span class="badge badge-warning mt-2 mb-5">{{tag.name}}</span>
-                    <!--                                {% if tag in ['skills', 'job', 'work'] %}-->
-                    <!--                                <span class="badge badge-warning">{{tag.name}}</span>-->
-                    <!--                                {% elif tag == 'skills' %}-->
-                    <!--                                <span class="badge badge-secondary">{{tag.name}}</span>-->
-                    <!--                                {% elif tag in ['story', 'blog'] %}-->
-                    <!--                                <span class="badge badge-primary">{{tag.name}}</span>-->
-                    <!--                                {% elif tag in ['personal'] %}-->
-                    <!--                                <span class="badge badge-success">{{tag.name}}</span>-->
-                    <!--                                {% elif tag in ['python', 'django', 'flask', 'pip'] %}-->
-                    <!--                                <span class="badge badge-info">{{tag.name}}</span>-->
-                    <!--                                {% endif %}-->
-                </a>
-                {% endfor %}
-            </div>
-            <div class="pull-right">
-                <p>{{post.body}}</p>
-            </div>
-            <span class="badge">Posted {{post.created}}</span>
         </div>
-        <hr>
     </div>
-</div>
+</section>
 {% endblock %}

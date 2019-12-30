@@ -1,12 +1,13 @@
 from flask import Flask
 from flask_admin import Admin
-from flask_admin.contrib.sqla import ModelView
 from flask_bootstrap import Bootstrap
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
+from flask_security import Security, SQLAlchemyUserDatastore
 
 from config import Configuration
+from models.admin import AdminView, HomeAdminIndexView
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -20,10 +21,18 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
-### ADMIN ###
+
+# ADMIN #
 from models.post import Post
 from models.tag import Tag
 
-admin = Admin(app)
-admin.add_view(ModelView(Post, db.session))
-admin.add_view(ModelView(Tag, db.session))
+admin = Admin(app, 'FlaskApp', url='/', index_view=HomeAdminIndexView(name='Home'))
+admin.add_view(AdminView(Post, db.session))
+admin.add_view(AdminView(Tag, db.session))
+
+# Flask user-security #
+from models.user import User
+from models.role import Role
+user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+security = Security(app, user_datastore)
+

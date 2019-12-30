@@ -1,8 +1,6 @@
-import re
 from datetime import datetime
 
 from app import db
-
 from models.post_tags import post_tags, slugify
 
 
@@ -22,7 +20,7 @@ class Post(db.Model):
         self.slug = self.generate_slug()
 
     def __repr__(self):
-        return '<Post id:{}, title: {}>'.format(self.id, self.title)
+        return '<Post id: {}, title: {}>'.format(self.id, self.title)
 
     def generate_slug(self):
         if self.title:

@@ -1,4 +1,5 @@
 import re
+
 from app import db
 
 
@@ -15,6 +16,3 @@ post_tags = db.Table('post_tags',
 # class PostTags(db.Model):
 #     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
 #     tag_id = db.Column(db.Integer, db.ForeignKey('tag.id'))
-
-
-
