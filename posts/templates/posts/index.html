@@ -9,6 +9,14 @@ Posts
     <div class="col-md-12">
         <div class="container">
             <div>
+                {% for message in get_flashed_messages() %}
+                    {% if message == 'Post was successfully created.' or
+                        message == 'Post was successfully edited.' %}
+                        <div class="badge badge-success">{{ message }}</div>
+                    {% else %}
+                        <div class="badge badge-danger">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
                 <div class="col-xl-6 mx-auto text-center">
                     <div class="section-title mb-100">
                         <p>all posts</p>

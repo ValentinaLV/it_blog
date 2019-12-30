@@ -2,6 +2,7 @@ from app import db
 from models.user import User
 from models.role import Role
 from models.users_roles import users_role
+from models.contact_us import ContactUs
 
 from app import user_datastore
 
@@ -13,4 +14,4 @@ from app import user_datastore
 # user_datastore.add_role_to_user(user, role)
 # db.session.commit()
 
-print(users_role.query.first())
+# print(users_role.query.first())

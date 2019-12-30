@@ -33,3 +33,4 @@ class PostAdminView(AdminMixin, BaseModelView):
 
 class TagAdminView(AdminMixin, BaseModelView):
     form_columns = ['name', 'posts']
+

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_security import login_required
 
 from app import db
@@ -13,7 +13,8 @@ posts_ = Blueprint('posts', __name__, template_folder='templates')
 @posts_.route('/create', methods=['POST', 'GET'])
 @login_required
 def create_post():
-    # if post
+    form = PostForm()
+
     if request.method == 'POST':
         title = request.form.get('title', '')
         body = request.form.get('body', '')
@@ -21,12 +22,13 @@ def create_post():
             post = Post(title=title, body=body)
             db.session.add(post)
             db.session.commit()
+            flash('Post was successfully created.')
         except:
-            print('Post wasn\'t added to db')
+            flash('Post wasn\'t added to db.')
         return redirect(url_for('posts.index'))
-    # if get
-    form = PostForm()
-    return render_template('posts/create_post.html', form=form)
+
+    elif request.method == 'GET':
+        return render_template('posts/create_post.html', form=form)
 
 
 @posts_.route('/<slug>/edit', methods=['POST', 'GET'])
@@ -38,7 +40,7 @@ def edit_post(slug):
         form = PostForm(formdata=request.form, obj=post)
         form.populate_obj(post)
         db.session.commit()
-
+        flash('Post was successfully edited.')
         return redirect(url_for('posts.post_detail', slug=slug))
 
     form = PostForm(obj=post)

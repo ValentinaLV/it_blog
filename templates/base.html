@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../static/css/style.css?version=7.8">
+    <link rel="stylesheet" href="../static/css/style.css?version=8.3">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>
         {% block title %}
@@ -21,6 +21,8 @@
 </head>
 
 <body>
+
+{% block nav %}
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark submit-btn">
         <a class="navbar-brand" href="/">TravelBlog</a>
@@ -42,6 +44,15 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="/contacts">Contacts</a>
                 </li>
+                {% if not current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/login">Login</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="/logout">Logout</a>
+                </li>
+                {% endif %}
                 {% if current_user.has_role('admin') %}
                 <li class="nav-item">
                     <a class="nav-link disabled" href="/admin">Admin Tools</a>
@@ -56,6 +67,7 @@
         </div>
     </nav>
 </header>
+{% endblock %}
 
 {% block content %}
 <section>
