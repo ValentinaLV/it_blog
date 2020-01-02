@@ -22,19 +22,43 @@ Login Page
                     <div class="row">
                         <div class="col-xl-6">
                             {{ form.username(placeholder='Name') }}
+                            {% if form.username.errors %}
+                            <div class="badge badge-warning">{% for error in form.username.errors %}
+                                <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-6">
                             {{ form.email(placeholder='Email') }}
+                            {% if form.email.errors %}
+                            <div class="badge badge-warning">{% for error in form.email.errors %}
+                                <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-6">
                             {{ form.password(placeholder='Password') }}
+                            {% if form.password.errors %}
+                            <div class="badge badge-warning">{% for error in form.password.errors %}
+                                <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-6">
                             {{ form.confirm(placeholder='Confirm Password') }}
+                            {% if form.confirm.errors %}
+                            <div class="badge badge-warning">{% for error in form.confirm.errors %}
+                                <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-12">
                             {{ form.accept_tos(class='') }}
-<!--                            {{ form.accept_tos.label(class='text-left') }}-->
+                            {{ form.accept_tos.label(class='badge badge-warning text-left') }}
                             {{ form.submit }}
                         </div>
                     </div>

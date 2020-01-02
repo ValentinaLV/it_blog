@@ -29,18 +29,48 @@ Contacts
                     <div class="row">
                         <div class="col-xl-6">
                             {{ form.name(placeholder='Name') }}
+                            {% if form.name.errors %}
+                            <div class="badge badge-warning">{% for error in form.name.errors %}
+                                <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-6">
                             {{ form.email(placeholder='Email') }}
+                            {% if form.email.errors %}
+                            <div class="badge badge-warning">{% for error in form.email.errors %}
+                                <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-6">
                             {{ form.subject(placeholder='Subject') }}
+                            {% if form.subject.errors %}
+                            <div class="badge badge-warning">{% for error in form.subject.errors %}
+                                <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-6">
                             {{ form.telephone(placeholder='Telephone') }}
+                            {% if form.telephone.errors %}
+                            <div class="badge badge-warning">{% for error in form.telephone.errors %}
+                                <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="col-xl-12">
                             {{ form.message(placeholder='Message') }}
+                            {% if form.message.errors %}
+                            <div class="badge badge-warning">{% for error in form.message.errors %}
+                                <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                             {{ form.submit }}
                         </div>
                     </div>

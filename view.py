@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, url_for, flash
-from passlib.handlers.sha2_crypt import sha512_crypt
+from sqlalchemy.exc import IntegrityError
 
 from app import app, db
 from models.contact_us import ContactUs
@@ -24,46 +24,37 @@ def disabled():
 
 @app.route('/contacts', methods=['POST', 'GET'])
 def contacts():
-    form = ContactUsForm()
-
+    form = ContactUsForm(request.form)
     if request.method == 'POST':
-        name = request.form.get('name', '')
-        email = request.form.get('email', '')
-        subject = request.form.get('subject', '')
-        telephone = request.form.get('telephone', '')
-        message = request.form.get('message', '')
-        try:
-            contact_us_msg = ContactUs(name=name, email=email,
-                                       telephone=telephone,
-                                       subject=subject,
-                                       message=message)
+        if form.validate():
+            contact_us_msg = ContactUs(name=form.name.data,
+                                       email=form.email.data,
+                                       telephone=form.telephone.data,
+                                       subject=form.subject.data,
+                                       message=form.message.data)
             db.session.add(contact_us_msg)
             db.session.commit()
             flash('Your form was successfully send.')
-        except Exception:
+        elif not form.validate():
             flash('Your form wasn\'t send.')
-        return redirect(url_for('contacts'))
 
-    elif request.method == 'GET':
-        return render_template('contact.html', form=form)
+    return render_template('contact.html', form=form)
 
 
 @app.route('/register', methods=["GET", "POST"])
 def register_user():
-    form = RegistrationForm()
+    form = RegistrationForm(request.form)
 
-    if request.method == 'POST':
-        username = request.form.get('username', '')
-        email = request.form.get('email', '')
-        password = sha512_crypt.encrypt((str(request.form.get('password', ''))))
+    if request.method == 'POST' and form.validate():
         try:
-            user = User(username=username, email=email, password=password)
+            user = User(username=form.username.data,
+                        email=form.email.data,
+                        password=form.password.data)
             db.session.add(user)
             db.session.commit()
             flash('User was successfully registered.')
-        except Exception:
-            flash('User wasn\'t registered.')
+        except IntegrityError:
+            flash('User wasn\'t registered. Username or email isn\'t unique. Try again.')
         return redirect(url_for('security.login'))
 
-    elif request.method == 'GET':
-        return render_template('register.html', form=form)
+    return render_template('register.html', form=form)
