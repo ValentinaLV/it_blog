@@ -41,7 +41,7 @@ def contacts():
     return render_template('contact.html', form=form)
 
 
-@app.route('/register', methods=["GET", "POST"])
+@app.route('/sign-up', methods=["GET", "POST"])
 def register_user():
     form = RegistrationForm(request.form)
 
@@ -57,4 +57,4 @@ def register_user():
             flash('User wasn\'t registered. Username or email isn\'t unique. Try again.')
         return redirect(url_for('security.login'))
 
-    return render_template('register.html', form=form)
+    return render_template('sign_up.html', form=form)
