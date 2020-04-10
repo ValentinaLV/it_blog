@@ -1,4 +1,4 @@
-# it_blog
+# It Blog - Flask app
 
 
 To deploy project on your local machine create new virtual environment and execute this command:
